@@ -331,7 +331,7 @@ int main(int, char**) {
     CustomDrawReadOnlyCheckBoxFileDialog customFileDialog;
 
 #ifdef USE_THUMBNAILS
-    ImGuiFileDialog::Instance()->SetCreateThumbnailCallback([](IGFD_Thumbnail_Info* vThumbnail_Info) -> void {
+    ImGuiFileDialog::Instance()->SetCreateThumbnailCallback([](IGFD_Texture_Info* vThumbnail_Info) -> void {
         if (vThumbnail_Info && vThumbnail_Info->isReadyToUpload && vThumbnail_Info->textureFileDatas) {
             GLuint textureId = 0;
             glGenTextures(1, &textureId);
@@ -353,7 +353,7 @@ int main(int, char**) {
             vThumbnail_Info->isReadyToDisplay = true;
         }
     });
-    fileDialogEmbedded3.SetCreateThumbnailCallback([](IGFD_Thumbnail_Info* vThumbnail_Info) -> void {
+    fileDialogEmbedded3.SetCreateThumbnailCallback([](IGFD_Texture_Info* vThumbnail_Info) -> void {
         if (vThumbnail_Info && vThumbnail_Info->isReadyToUpload && vThumbnail_Info->textureFileDatas) {
             GLuint textureId = 0;
             glGenTextures(1, &textureId);
@@ -375,14 +375,14 @@ int main(int, char**) {
             vThumbnail_Info->isReadyToDisplay = true;
         }
     });
-    ImGuiFileDialog::Instance()->SetDestroyThumbnailCallback([](IGFD_Thumbnail_Info* vThumbnail_Info) {
+    ImGuiFileDialog::Instance()->SetDestroyThumbnailCallback([](IGFD_Texture_Info* vThumbnail_Info) {
         if (vThumbnail_Info) {
             auto texID = (GLuint)(size_t)vThumbnail_Info->textureID;
             glDeleteTextures(1, &texID);
             glFinish();
         }
     });
-    fileDialogEmbedded3.SetDestroyThumbnailCallback([](IGFD_Thumbnail_Info* vThumbnail_Info) {
+    fileDialogEmbedded3.SetDestroyThumbnailCallback([](IGFD_Texture_Info* vThumbnail_Info) {
         if (vThumbnail_Info) {
             auto texID = (GLuint)(size_t)vThumbnail_Info->textureID;
             glDeleteTextures(1, &texID);
