@@ -1,4 +1,5 @@
 #pragma once
+#include "IconsFontAwesome6.h"
 
 // uncomment and modify defines under for customize ImGuiFileDialog
 
@@ -56,7 +57,7 @@
 //// EXPLORATION BY KEYS ////////
 /////////////////////////////////
 
-// #define USE_EXPLORATION_BY_KEYS
+#define USE_EXPLORATION_BY_KEYS
 // this mapping by default is for GLFW but you can use another
 // #include <GLFW/glfw3.h>
 // Up key for explore to the top
@@ -105,18 +106,19 @@
 /////////////////////////////////
 
 // locales string
-// #define createDirButtonString "+"
+#define createDirButtonString ICON_FA_FOLDER_PLUS
+#define resetButtonString ICON_FA_CARET_LEFT
 // #define resetButtonString "R"
-// #define devicesButtonString "Devices"
-// #define editPathButtonString "E"
-// #define searchString "Search"
+#define devicesButtonString  ICON_FA_HARD_DRIVE
+#define editPathButtonString ICON_FA_PENCIL
+#define searchString ICON_FA_MAGNIFYING_GLASS
 // #define dirEntryString "[DIR] "
 // #define linkEntryString "[LINK] "
 // #define fileEntryString "[FILE] "
 // #define fileNameString "File Name : "
 // #define dirNameString "Directory Path :"
 // #define buttonResetSearchString "Reset search"
-// #define buttonDriveString "Devices"
+#define buttonDriveString "Devices"
 // #define buttonEditPathString "Edit path\nYou can also right click on path buttons"
 // #define buttonResetPathString "Reset to current directory"
 // #define buttonCreateDirString "Create Directory"
@@ -128,7 +130,8 @@
 // Validation buttons
 // #define okButtonString " OK"
 // #define okButtonWidth 0.0f
-// #define cancelButtonString " Cancel"
+#define cancelButtonString ICON_FA_XMARK " Cancel"
+//#define cancelButtonString " Cancel"
 // #define cancelButtonWidth 0.0f
 // alignement [0:1], 0.0 is left, 0.5 middle, 1.0 right, and other ratios
 // #define okCancelButtonAlignement 0.0f
@@ -171,26 +174,26 @@
 //// PLACES FEATURES ////////////
 /////////////////////////////////
 
-// #define USE_PLACES_FEATURE
-// #define PLACES_PANE_DEFAULT_SHOWN false
-// #define placesPaneWith 150.0f
-// #define IMGUI_TOGGLE_BUTTON ToggleButton
-// #define placesButtonString "Place"
-// #define placesButtonHelpString "Places"
-// #define addPlaceButtonString "+"
-// #define removePlaceButtonString "-"
-// #define validatePlaceButtonString "ok"
-// #define editPlaceButtonString "E"
+#define USE_PLACES_FEATURE
+#define PLACES_PANE_DEFAULT_SHOWN true
+#define placesPaneWith 150.0
+//#define IMGUI_TOGGLE_BUTTON ToggleButton
+ #define placesButtonString ICON_FA_LIST
+ #define placesButtonHelpString "Places"
+ #define addPlaceButtonString "+"
+ #define removePlaceButtonString "-"
+ #define validatePlaceButtonString "ok"
+ #define editPlaceButtonString "E"
 
 //////////////////////////////////////
 //// PLACES FEATURES : BOOKMARKS /////
 //////////////////////////////////////
 
 // a group for bookmarks will be added by default, but you can also create it yourself and many more
-// #define USE_PLACES_BOOKMARKS
-// #define PLACES_BOOKMARK_DEFAULT_OPEPEND true
-// #define placesBookmarksGroupName "Bookmarks"
-// #define placesBookmarksDisplayOrder 0  // to the first
+#define USE_PLACES_BOOKMARKS
+#define PLACES_BOOKMARK_DEFAULT_OPEPEND true
+#define placesBookmarksGroupName ICON_FA_BOOKMARK " Bookmarks"
+#define placesBookmarksDisplayOrder 0  // to the first
 
 //////////////////////////////////////
 //// PLACES FEATURES : DEVICES ///////
@@ -198,7 +201,8 @@
 
 // a group for system devices (returned by IFileSystem), but you can also add yours
 // by ex if you would like to display a specific icon for some devices
-// #define USE_PLACES_DEVICES
-// #define PLACES_DEVICES_DEFAULT_OPEPEND true
-// #define placesDevicesGroupName "Devices"
-// #define placesDevicesDisplayOrder 10  // to the end
+#define USE_PLACES_DEVICES
+#define PLACES_DEVICES_DEFAULT_OPEPEND true
+#define placesDevicesGroupName ICON_FA_HARD_DRIVE " Devices"
+#define placesDevicesDisplayOrder 10  // to the end
+                                      //
